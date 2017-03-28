@@ -21,6 +21,8 @@ CREATE TABLE public.employee
     super_ssn character(9) COLLATE pg_catalog."default" DEFAULT NULL::bpchar,
     dno integer NOT NULL,
     phone_number character(12) COLLATE pg_catalog."default" DEFAULT NULL::bpchar,
+    employee_username character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    employee_password character varying(20) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT employee_pkey PRIMARY KEY (ssn),
     CONSTRAINT employee_ibfk_1 FOREIGN KEY (super_ssn)
         REFERENCES public.employee (ssn) MATCH SIMPLE
